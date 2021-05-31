@@ -1,0 +1,251 @@
+
+
+body {
+	margin: 0px;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+header,
+section,
+footer {
+	border: 1px solid #cecece8e;
+	min-height: 150px;
+}
+
+#box1,
+#box3{
+	border: none;
+}
+
+/**
+ * CSS grids solution
+ */
+
+/* Mobile */
+#container {
+	width: 100%;
+	display: grid;
+	
+	grid-template-columns: 1fr;
+	grid-template-areas: 
+		"header"
+		"box1"
+		"box2"
+		"box3"
+		"content"
+		"content"
+		"footer"
+	;
+
+	column-gap: 2%;
+	row-gap: 20px;
+}
+
+#header {
+	grid-area: header
+}
+
+#box1 {
+	grid-area: box1
+}
+
+#box2 {
+	grid-area: box2
+}
+
+#box3 {
+	grid-area: box3
+}
+
+#content {
+	grid-area: content
+}
+
+/* #sidebar {
+	grid-area: sidebar
+}
+*/
+
+#footer {
+	grid-area: footer
+}
+
+#footer {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas: 
+		"footer-section-1"
+		"footer-section-1"
+		"footer-section-2"
+		"footer-section-2"
+	;
+
+	column-gap: 2%;
+	row-gap: 10px;
+	padding: 10px
+}
+
+#footer-section-1 {
+	grid-area: footer-section-1
+}
+
+#footer-section-2 {
+	grid-area: footer-section-2
+}
+
+#footer-section-3 {
+	grid-area: footer-section-3
+}
+
+#footer-section-4 {
+	grid-area: footer-section-4
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+	#container {
+		width: 100%;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-areas: 
+			"header header header header header header header header header header header header"
+			"box1 box1 box1 box1 box2 box2 box2 box2 box3 box3 box3 box3"
+			"content content content content content content content content content content content content"
+			"footer footer footer footer footer footer footer footer footer footer footer footer"
+		;
+	}
+
+	#footer {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-areas: 
+			"footer-section-1 footer-section-2"
+			"footer-section-1 footer-section-2"
+		;
+	}
+}
+
+/* Small desktop */
+@media screen and (min-width: 960px) {
+	#container {
+		width: 100%;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-areas: 
+			"header header header header header header header header header header header header"
+			"box1 box1 box1 box2 box2 box2 box2 box2 box2 box3 box3 box3"
+			"content content content content content content content content content content content content"
+			"footer footer footer footer footer footer footer footer footer footer footer footer"
+		;
+	}
+
+	#footer {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas: 
+			"footer-section-1 footer-section-1 footer-section-2 footer-section-2"
+		;
+		
+		column-gap: 20px;
+		padding: 5px;
+	}
+}
+
+/* Large desktop */
+@media screen and (min-width: 1200px) {
+	#container {
+		width: 100%;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-areas: 
+			"header header header header header header header header header header header header"
+			"box1 box1 box2 box2 box2 box2 box2 box2 box2 box2 box3 box3"
+			"content content content content content content content content content content content content"
+			"footer footer footer footer footer footer footer footer footer footer footer footer"
+			;
+	}
+}
+
+
+
+/**
+ * Flexbox solution
+ */
+
+#content {
+	background-color: #cee9f8;
+	height: 300px;
+	border-radius: 10px;
+}
+
+#header{
+	background-image: url('header.jpg'); 
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 500px;
+
+}
+
+#main-nav,
+#header,
+#content {
+	display: flex;
+}
+
+#main-nav {
+	box-sizing: border-box;
+	height: 100%;
+	align-items: start;
+	padding: 20px;
+}
+
+#header-title {
+	height: 200px;
+	display: block;
+	margin-top: 200px;
+	align-self: center;
+	padding: 20px;
+	
+	font-weight: medium;
+	letter-spacing: 2px;
+	font-size: 40px;
+	text-decoration: none;
+	color: white;
+	text-shadow: 1px 1px 10px #52515c94
+}
+
+a {
+text-decoration: none;
+color: white;
+text-shadow: 1px 1px 10px #52515c94
+}
+
+li{
+	list-style-type: none;
+	
+}
+
+#box2{
+border-radius: 4px;
+box-shadow: 0px 4px 5px 0px rgba(162, 162, 165, 0.582) ;
+}
+
+#box-title{
+	margin-left: 320px;
+	font-weight: lighter;
+	text-decoration: underline;
+}
+
+#main-nav li {
+	margin-right: 20px;
+}
+
+
+#content {
+	flex-flow: row wrap;
+}
+
+#content section {
+	margin: 10px 10px;
+	flex: 1 1 235px;
+}
+
+#footer {
+	background-color: #88a0ec;
+}
